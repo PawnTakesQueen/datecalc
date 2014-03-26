@@ -1,4 +1,4 @@
-__version__ = '2.0.0'
+__version__ = '2.0.2'
 __author__ = 'Violet (PariahVi)'
 
 month_offset = ([4, 3], [0, 6], [0], [3], [5], [1], [3], [6], [2], [4], [0],
@@ -28,28 +28,25 @@ def jul_leap_year(y, ny):
 
 
 def is_leap_year(year, type):
-    if type == "GREGORIAN":
+    if type == 'GREGORIAN':
         new_year = year
         if year < 0:
             new_year = (year + 1) % 400
         return ce_leap_year(new_year)
-    if type == "CE":
+    elif type == 'CE':
         return ce_leap_year(year)
-    if type == "JULIAN":
-        new_year = year
-        jul_leap_year(year, new_year)
-    if type == "ENGLISH":
-        new_year = year
+    elif type == 'JULIAN':
+        return jul_leap_year(year)
+    elif type == 'ENGLISH':
         if year >= 1800:
-            return ce_leap_year(new_year)
+            return ce_leap_year(year)
         elif year < 1800:
-            return jul_leap_year(year, new_year)
-    if type == "ROMAN":
-        new_year = year
+            return jul_leap_year(year)
+    elif type == 'ROMAN':
         if year >= 1700:
-            return ce_leap_year(new_year)
+            return ce_leap_year(year)
         elif year < 1700:
-            return jul_leap_year(year, new_year)
+            return jul_leap_year(year)
 
 
 def check_int(value):
@@ -70,7 +67,7 @@ def is_real_date(year, month, date, type):
         return 4
     if type not in types:
         return 5
-    if not year and type != "CE":
+    if not year and type != 'CE':
         return 6
     else:
         if month in month30 and date > 30:
@@ -78,17 +75,17 @@ def is_real_date(year, month, date, type):
         elif month == 1 and not (date < 29 or (is_leap_year(year, type)
                                  and date == 29)):
             return 7
-    if type == "ENGLISH":
+    if type == 'ENGLISH':
         if month == 9 and date > 2 and date < 15 and year == 1752:
             return 8
-    if type == "ROMAN":
+    if type == 'ROMAN':
         if month == 10 and date > 4 and date < 16 and year == 1582:
             return 8
     return 1
 
 
 def add_xxyy(year, type):
-    if type != "CE":
+    if type != 'CE':
         if year < 0:
             new_year = (year + 1) % 100
         else:
@@ -113,22 +110,22 @@ def jul_add_yyxx(y):
 
 
 def add_yyxx(year, month, date, type):
-    if type == "GREGORIAN":
+    if type == 'GREGORIAN':
         new_year = year
         if year < 0:
             new_year = (year + 1) % 400
         new_year = new_year % 400
         return ce_add_yyxx(new_year)
-    if type == "CE":
+    if type == 'CE':
         new_year = year % 400
         return ce_add_yyxx(new_year)
-    if type == "JULIAN":
+    if type == 'JULIAN':
         new_year = year
         if year < 0:
             new_year = (year + 1) % 700
         new_year = new_year % 700
         return jul_add_yyxx(new_year)
-    if type == "ENGLISH":
+    if type == 'ENGLISH':
         if year >= 1752:
             if year == 1752:
                 if month in range(9, 13):
@@ -150,7 +147,7 @@ def add_yyxx(year, month, date, type):
                 new_year = (year + 1) % 700
             new_year = new_year % 700
             return jul_add_yyxx(new_year)
-    if type == "ROMAN":
+    if type == 'ROMAN':
         if year >= 1582:
             if year == 1582:
                 if month in range(10, 13):

@@ -1,8 +1,8 @@
 datecalc
 ========
-######v2.0.0
+######v2.0.2
 
-datecalc is created by Violet (http://pariahvi.com) and is licensed under a BSD License. Read LICENSE for more license text.
+datecalc is created by Violet (http://pariahvi.com) and is licensed under a BSD License. Read LICENSE.txt for more license text.
 
 Python module to calculate the day of the week of any date
 
