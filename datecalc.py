@@ -1,4 +1,4 @@
-__version__ = '2.0.2'
+__version__ = '2.0.3'
 __author__ = 'Violet (PariahVi)'
 
 month_offset = ([4, 3], [0, 6], [0], [3], [5], [1], [3], [6], [2], [4], [0],
@@ -103,10 +103,6 @@ def ce_add_yyxx(y):
 
 def jul_add_yyxx(y):
     return (7 - int(y / 100)) % 7
-    if y < 100:
-        return 0
-    else:
-        return 7 - int(y / 100)
 
 
 def add_yyxx(year, month, date, type):
@@ -116,16 +112,16 @@ def add_yyxx(year, month, date, type):
             new_year = (year + 1) % 400
         new_year = new_year % 400
         return ce_add_yyxx(new_year)
-    if type == 'CE':
+    elif type == 'CE':
         new_year = year % 400
         return ce_add_yyxx(new_year)
-    if type == 'JULIAN':
+    elif type == 'JULIAN':
         new_year = year
         if year < 0:
             new_year = (year + 1) % 700
-        new_year = new_year % 700
+        new_year %= 700
         return jul_add_yyxx(new_year)
-    if type == 'ENGLISH':
+    elif type == 'ENGLISH':
         if year >= 1752:
             if year == 1752:
                 if month in range(9, 13):
@@ -145,9 +141,9 @@ def add_yyxx(year, month, date, type):
             new_year = year
             if year < 0:
                 new_year = (year + 1) % 700
-            new_year = new_year % 700
+            new_year %= 700
             return jul_add_yyxx(new_year)
-    if type == 'ROMAN':
+    elif type == 'ROMAN':
         if year >= 1582:
             if year == 1582:
                 if month in range(10, 13):
@@ -167,7 +163,7 @@ def add_yyxx(year, month, date, type):
             new_year = year
             if year < 0:
                 new_year = (year + 1) % 700
-            new_year = new_value % 700
+            new_year %= 700
             return jul_add_yyxx(new_year)
 
 
@@ -176,7 +172,7 @@ def add_year(year, month, date, type):
 
 
 def add_month(year, month, type):
-    if is_leap_year(year, type) == 1 and len(month_offset[month - 1]) > 1:
+    if is_leap_year(year, type) and len(month_offset[month - 1]) > 1:
         return month_offset[month - 1][1]
     return month_offset[month - 1][0]
 
@@ -202,3 +198,5 @@ def date(year, month, date, type='ENGLISH'):
     }
     if check in range(2, 9):
         raise Exception(exceptions[check])
+
+print(add_year(2014, 3, 26, "ENGLISH"))

@@ -1,6 +1,6 @@
 datecalc
 ========
-######v2.0.2
+######v2.0.3
 
 datecalc is created by Violet (http://pariahvi.com) and is licensed under a BSD License. Read LICENSE.txt for more license text.
 
