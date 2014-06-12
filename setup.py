@@ -10,10 +10,10 @@ setup(name='datecalc',
       license='BSD',
       version=version,
       author=author,
-      author_email="violet@pariahvi.com",
+      author_email="vi@pariahvi.com",
       maintainer=author,
-      maintainer_email='violet@pariahvi.com',
-      url='http://bitbucket.org/PariahVi/datecalc',
+      maintainer_email='vi@pariahvi.com',
+      url='http://github.com/PariahVi/datecalc',
       py_modules=["datecalc"],
       platforms='No particular restrictions',
       classifiers=[
@@ -33,5 +33,5 @@ setup(name='datecalc',
            'Programming Language :: Python :: 3.3',
            'Operating System :: OS Independent',
            'Topic :: Software Development :: Libraries :: Python Modules'
-          ]
-      )
+      ]
+)
