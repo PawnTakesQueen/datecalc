@@ -1,7 +1,7 @@
 datecalc
 ========
 
-datecalc is created by PariahVi (http://pariahvi.com) and is licensed under a BSD License. Read LICENSE.txt for more license text.
+datecalc is created by PariahVi ([http://pariahvi.com](http://pariahvi.com)) and is licensed under a BSD License. Read LICENSE.txt for more license text.
 
 A Module to Calculate the Day of the Week of Any Date
 
