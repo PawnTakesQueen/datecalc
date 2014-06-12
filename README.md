@@ -3,7 +3,7 @@ datecalc
 
 datecalc is created by PariahVi (http://pariahvi.com) and is licensed under a BSD License. Read LICENSE.txt for more license text.
 
-Python module to calculate the day of the week of any date
+A Module to Calculate the Day of the Week of Any Date
 
 ####Dependencies
 * Python (>= 2.4)
