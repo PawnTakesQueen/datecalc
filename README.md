@@ -8,16 +8,6 @@ A Module to Calculate the Day of the Week of Any Date
 ####Dependencies
 * Python (>= 2.4)
 
-To install, open the terminal and `cd to the root directory of this program, then enter the command:
-```
-sudo python setup.py install
-```
-
-You could also install this module using pip (Recommended Method) by entering the command:
-```
-sudo pip install datecalc
-```
-
 ####Importing the Module
 Simply type:
 ```
