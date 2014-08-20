@@ -4,7 +4,7 @@
 
 # A Module to Calculate the Day of the Week of Any Date
 
-__version__ = '1.0.3.0'
+__version__ = '1.0.3.2'
 __author__ = 'PariahVi (http://pariahvi.com)'
 
 
@@ -101,13 +101,9 @@ def is_real_date(year, month, date, cal_type):
 
 # Figures out value to add from last two digits of year.
 def add_xxyy(year, cal_type):
+    new_year = year % 100
     if cal_type != 'CE':
-        if year < 0:
-            new_year = (year + 1) % 100
-        else:
-            new_year = year % 100
-    else:
-        new_year = year % 100
+        new_year = (year + 1) % 100
     return ((int(new_year / 12) + (new_year % 12) +
             int((new_year % 12) / 4)) % 7)
 
