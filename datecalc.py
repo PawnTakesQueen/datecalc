@@ -1,10 +1,31 @@
-# Copyright 2012-2014 PariahVi (http://pariahvi.com).
-# LatchBox is licensed under a BSD License.
-# Read LICENSE.txt for more license text.
+# Copyright (C) 2014-2015, PariahVi
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+#
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY AUTHOR AND CONTRIBUTORS "AS IS" AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED. IN NO EVENT SHALL AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
 
 # A Module to Calculate the Day of the Week of Any Date
 
-__version__ = '1.0.3.2'
+__version__ = '1.0.3.3'
 __author__ = 'PariahVi (http://pariahvi.com)'
 
 
@@ -71,7 +92,7 @@ def check_int(value):
     return 1
 
 
-# Check if the date (year, month, date) exists if cal_type.
+# Check if the date (year, month, date) exists in cal_type.
 def is_real_date(year, month, date, cal_type):
     month30 = (4, 6, 9, 11)
     if month not in range(1, 13):
@@ -87,7 +108,7 @@ def is_real_date(year, month, date, cal_type):
     else:
         if month in month30 and date > 30:
             return 7
-        elif month == 1 and not (date < 29 or (is_leap_year(year, cal_type)
+        elif month == 2 and not (date < 29 or (is_leap_year(year, cal_type)
                                  and date == 29)):
             return 7
     if cal_type == 'ENGLISH':
