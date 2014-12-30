@@ -1,7 +1,7 @@
 datecalc
 ========
 
-datecalc is created by PariahVi ([http://pariahvi.com](http://pariahvi.com)) and is licensed under a BSD 2-Clause License. Read LICENSE.txt for more license text.
+datecalc is created by Vi Grey ([http://pariahvi.com](http://pariahvi.com)) and is licensed under a BSD 2-Clause License. Read LICENSE.txt for more license text.
 
 A Module to Calculate the Day of the Week of Any Date
 
@@ -23,6 +23,8 @@ To calculate the day of the week for any date, use *datecalc.date(y, m, d, t)* w
 * CE
 
 The default type is English, which is the calendar system the English speaking western countries are using.  This is a system where the calendar was under the Julian system until 1752, when it switched to the Gregorian Calendar, skipping  September 3rd and going straight to September 15th to offset for the differences in the calendar systems on how they incorporated leap years.
+
+The Roman calendar system switched to the Gregorian calendar in 1582, going from October 4th streight to October 15th.
 
 ####Example Uses
 ```
