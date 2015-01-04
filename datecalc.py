@@ -26,7 +26,7 @@
 # A Module to Calculate the Day of the Week of Any Date
 
 __version__ = '1.0.3.6'
-__author__ = 'PariahVi (http://pariahvi.com)'
+__author__ = 'Vi Grey (http://pariahvi.com)'
 
 
 MONTH_OFFSET = [
