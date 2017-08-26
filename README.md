@@ -5,16 +5,16 @@ datecalc is created by Vi Grey (https://vigrey.com) <vi@vigrey.com> and is licen
 
 A Module to Calculate the Day of the Week of Any Date
 
-####Dependencies
+#### Dependencies
 * Python (>= 2.4)
 
-####Importing the Module
+#### Importing the Module
 Simply type:
 ```
 import datecalc
 ```
 
-####Using the Module
+#### Using the Module
 To calculate the day of the week for any date, use *datecalc.date(y, m, d, t)* where y is the full year (a negative integer for BC years), m is the month number, d is the day number, and type is the calendar type.  The calendar types you have to chose from are:
 * English
 * Roman
@@ -26,7 +26,7 @@ The default type is English, which is the calendar system the English speaking w
 
 The Roman calendar system switched to the Gregorian calendar in 1582, going from October 4th streight to October 15th.
 
-####Example Uses
+#### Example Uses
 ```
 import datecalc
 
